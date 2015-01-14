@@ -1,0 +1,149 @@
+body {
+  background: #F3F3F3;
+}
+
+p {
+  margin: 0 0 10px;
+}
+
+a, a:hover, a:focus {
+  color: #121515;
+}
+
+
+
+/* Form */
+
+.auth-forms {
+  max-width:400px;
+  margin:0 auto;  
+  padding:1px 25px 25px 25px;
+}
+
+/* Nav Bar */
+
+.navbar {
+  margin-bottom: 0px;
+}
+
+.title {
+  text-align: center;
+}
+
+.img-circle.gravatar {
+  width: 30px;
+}
+
+/* Panel */
+
+.panel-title {
+  font-weight: bold;
+}
+
+.img-browse {
+  padding-top: 30px;
+}
+
+.panel-success > .panel-heading .badge {
+  color: #0F9D58;
+  background-color: #FFFFFF;
+  font-size: 15px;
+  margin-left: 5px;
+}
+
+.panel-warning > .panel-heading .badge {
+  color: #FF5722;
+  background-color: #FFFFFF;
+  font-size: 15px;
+  margin-left: 5px;
+}
+
+/* Task Header */
+
+.price-tag {
+  font-size: 40px;
+  font-weight: 300;  
+  margin-top: 20px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+/* Task List */
+
+.list-group .list-group-item .row-picture img {
+  width: 50px;
+  height: 50px;
+}
+
+.list-group .list-group-item .list-group-item-heading {
+  color: rgba(0,0,0,.77);
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 15px;
+}
+
+.list-group .list-group-item .row-content {
+  float: left;
+  margin-top: 0;
+  width: 40%;
+  width: calc(100% - 160px);
+  height: 60px;
+}
+
+.list-group .list-group-item .payment {
+  float: right;
+  margin-top: 0;  
+  width: 85px;
+  text-align: center;
+  font-size: 30px;
+  line-height: 30px;
+}
+
+.list-group .list-group-item .payment .status{
+  font-size: 14px;
+  position: absolute;
+  padding: 5px;
+  right: 5px;
+  bottom: 5px;
+  width: 90px;
+  height: 25px; 
+}
+
+.list-group-item-text {
+  font-size: 12px;
+  margin-bottom: 0;
+  line-height: 1.3;
+}
+
+.open {
+  background-color: #03a9f4;
+}
+
+.assigned {
+  background-color: #9e9e9e;
+}
+
+.completed {
+  background-color: #9e9e9e;
+}
+
+/* Comments */
+
+.well.well-sm.cmt {
+  color: rgba(94, 94, 94, 1);
+  font-size: 14px;
+}
+
+.cmt-title {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.cmt-time {
+  font-size: 12px;
+}
+
+.img-circle.comment.gravatar {
+  width: 35px;
+  margin-right: 5px;
+}

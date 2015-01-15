@@ -3,7 +3,7 @@
 var app = angular
   .module('TaskNinjaApp', [
     'ngAnimate',
-    'ngResource'    
+    'ngResource',    
     'ngRoute',    
     'firebase'
   ])

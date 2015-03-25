@@ -1,0 +1,34 @@
+<div class="row">
+	<div class="col-md-10 col-md-offset-1">
+		<h2 class="title">Dashboard</h2><br>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="panel panel-warning">
+				    <div class="panel-heading">
+				        <h3 class="panel-title">Task Poster <span class="badge">{{numPoster}}</span></h3>
+				    </div>
+				    <div class="panel-body">
+				    	<div ng-if="numPoster === 0"> You haven't posted any task yet</div>
+			        <div ng-repeat="task in taskPoster">
+			        	<a ng-href="#/browse/{{task.taskId}}"> {{task.title}} </a>
+			        </div>
+				    </div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="panel panel-success">
+				    <div class="panel-heading">
+				        <h3 class="panel-title">Task Runner <span class="badge">{{numRunner}}</span></h3>
+				    </div>
+				    <div class="panel-body">
+				    	<div ng-if="numRunner === 0"> You haven't run any task yet</div>		    	
+			        <div ng-repeat="task in taskRunner">
+			        	<a ng-href="#/browse/{{task.taskId}}"> {{task.title}} </a>
+			        </div>
+				    </div>
+				</div>				
+			</div>
+		</div>
+
+	</div>	
+</div>

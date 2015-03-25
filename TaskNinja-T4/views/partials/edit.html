@@ -1,0 +1,27 @@
+<div class="modal fade" id="ediModal" ng-controller="TaskController">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      
+      <div class="panel panel-info title">
+
+        <div class="panel-heading title">            
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>        
+            <h3 class="panel-title">Edit Task</h3>
+        </div>
+
+        <div class="panel-body">
+          <form ng-submit="editTask(selectedTask)">            
+            <input type="text" ng-model="selectedTask.title" class="form-control" placeholder="Task title" required><br>  
+            <textarea ng-model="selectedTask.description" row="3" class="form-control" placeholder="Describe what you need done" required></textarea><br>
+            <input type="number" ng-model="selectedTask.total" class="form-control" placeholder="How much will you pay?" required><br>
+            <input type="submit" value="Update" class="btn btn-info">
+          </form>
+        </div>
+
+      </div>
+      
+    
+     
+    </div>
+  </div>
+</div>

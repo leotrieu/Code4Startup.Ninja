@@ -1,0 +1,100 @@
+<div class="row">
+	
+	<!-- LEFT PANEL -->
+	<div class="col-md-offset-1 col-md-4">
+
+		<div class="list-group">
+				<!-- SEARCH TOOL -->
+				<div class="form-group">
+					<div class="input-group">
+						<div class="input-group-addon">
+							<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+						</div>
+			      <input type="text" ng-model="searchTask" class="form-control" placeholder="Search">
+			    </div>	
+				</div>
+				
+				<!-- TASK LIST -->	
+				<a ng-repeat="task in tasks | filter: {title: searchTask , status: '!cancelled'} | orderBy: 'datetime':true" ng-href="#/browse/{{task.$id}}">
+					<div class="list-group-item">
+				        <div class="row-picture">
+				            <img class="circle" ng-src="{{task.gravatar}}">
+				        </div>
+				        <div class="row-content">
+				            <h4 class="list-group-item-heading">{{task.title | limitTo:25}}{{ task.title.length > 25? "..." : ""}}</h4>
+				            <span class="list-group-item-text">
+				            	<span am-time-ago="task.datetime"></span>
+				            </span>		            
+				        </div>
+				        <div class="payment">
+				        	<div>${{task.total}}</div>
+				        	<span class="label status {{task.status}}">{{task.status}}</span>		        	
+				        </div>
+				    </div>		    
+			    	<div class="list-group-separator"></div>
+		    	</a>
+		</div>
+
+	</div>
+
+	<!-- RIGHT PANEL -->
+	<div class="col-md-6">
+		<div ng-show="listMode">
+			<img src="images/browse.jpg" class="img-responsive img-browse">
+		</div>
+		
+		<div ng-show="!listMode">
+			
+			<!-- HEADER -->
+			<div class="row">
+				<div class="col-md-8">
+					<h3>{{ selectedTask.title }}</h3>
+					<span>
+						<img ng-src="{{ selectedTask.gravatar }}" class="img-circle gravatar">
+						Posted by {{selectedTask.name}} -
+						<span am-time-ago="selectedTask.datetime"></span>&nbsp;
+						<span class="label status {{selectedTask.status}}">{{ selectedTask.status }}</span>
+					</span>								
+				</div>
+				
+				<div class="col-md-4 title">
+					<div class="price-tag">
+						${{ selectedTask.total }}
+						
+						<div ng-show="isTaskCreator(selectedTask) && isOpen(selectedTask)">
+							<div class="btn-group">
+							    <a href="" class="btn btn-warning">Admin</a>
+							    <a href="" class="btn btn-warning dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
+							    <ul class="dropdown-menu">
+							        <li><a href="" data-toggle="modal" data-target="#ediModal">EDIT TASK</a></li>							        
+							        <li class="divider"></li>
+							        <li><a href="" ng-click="cancelTask(selectedTask.$id)">CANCEL TASK</a></li>
+							    </ul>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+			<br>
+
+			<!-- DESCRIPTION -->
+			<div class="row">
+				<div class="col-md-12">
+					<div class="panel panel-default">
+					    <div class="panel-heading">
+					        <h3 class="panel-title">Description</h3>
+					    </div>
+					    <div class="panel-body">
+					        {{ selectedTask.description }}
+					    </div>
+					</div>			
+				</div>	
+			</div>
+			
+	</div>
+
+</div>
+
+<div ng-include="'views/partials/edit.html'"></div>

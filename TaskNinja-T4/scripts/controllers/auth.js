@@ -25,7 +25,7 @@ app.controller('AuthController', function($scope, $location, toaster, Auth) {
 	};
 
 	$scope.changePassword = function(user) {
-     Auth.changePassword(email, oldPass, newPass)
+     Auth.changePassword(user)
       .then(function() {                        
         
         // Reset form

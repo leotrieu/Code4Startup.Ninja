@@ -6,7 +6,7 @@
 
 ####[See DEMO](https://task-ninja.firebaseapp.com)
 
-With [TaskNinja](https://code4startup.com/projects/ninja-learn-angularjs-firebase-by-cloning-udemy), you will be learning how to use AngularJS & Firebase to build a Real-time web app. 
+With [TaskNinja](https://code4startup.com/projects/ninja-learn-angularjs-firebase-by-cloning-udemy?utm_source=github.com&utm_medium=taskninja&utm_campaign=democode), you will be learning how to use AngularJS & Firebase to build a Real-time web app. 
 More importantly, we're build a Real platform which is a clone of TaskRabbit.
 
 > Note: You must use exact version of all dependencies in this tutorial to make it work properly.
@@ -61,4 +61,4 @@ More importantly, we're build a Real platform which is a clone of TaskRabbit.
 #### Task 10: Deploying & Hosting
 * Deploying & hosting on Firebase for FREE
 
-##### More awesome courses are available on [Code4Startup](https://code4startup.com)
+##### More awesome courses are available on [Code4Startup](https://code4startup.com/?utm_source=github.com&utm_medium=taskninja&utm_campaign=democode)

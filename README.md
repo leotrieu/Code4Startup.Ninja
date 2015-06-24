@@ -4,8 +4,6 @@
   <img src="http://qph.is.quoracdn.net/main-qimg-737046bffd0660bdf8b4da6c1900082b?convert_to_webp=true" alt="Clone TaskRabbit with AngularJS and Firebase">
 </p>
 
-####[See DEMO](https://task-ninja.firebaseapp.com)
-
 With [TaskNinja](https://code4startup.com/projects/ninja-learn-angularjs-firebase-by-cloning-udemy?utm_source=github.com&utm_medium=taskninja&utm_campaign=democode), you will be learning how to use AngularJS & Firebase to build a Real-time web app. 
 More importantly, we're build a Real platform which is a clone of TaskRabbit.
 

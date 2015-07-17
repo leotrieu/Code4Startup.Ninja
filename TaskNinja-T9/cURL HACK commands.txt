@@ -1,0 +1,8 @@
+curl -X POST -d '{ "datetime" : 1422331503823, "description" : "2 cubic metre of soil from pile to be spread over back yard.", "gravatar" : "https://www.gravatar.com/avatar/03037e249b97891693d6e292289be0ff.jpg?d=identicon", "name" : "David Jones", "poster" : "simplelogin:22", "status" : "open", "title" : "Garden maintenance", "total" : 60}' \
+https://task-ninja.firebaseio.com/tasks.json
+
+curl -X DELETE \
+  https://task-ninja.firebaseio.com/tasks.json
+
+curl -X DELETE \
+  https://task-ninja.firebaseio.com/profile/simplelogin:22.json

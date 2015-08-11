@@ -1,0 +1,23 @@
+<div class="modal fade" id="offModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      
+      <div class="panel panel-info title">
+
+        <div class="panel-heading title">            
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h3 class="panel-title">Make an Offer</h3>
+        </div>
+
+        <div class="panel-body">
+          <form ng-submit="makeOffer()">
+            <input type="number" ng-model="$parent.total" class="form-control" placeholder="How much will you offer for this task? eg: 25" required ng-disabled="$parent.block">
+            <input type="submit" value="Offer Now" class="btn btn-info" ng-disabled="$parent.block">
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,6 +1,6 @@
 'use strict';
 
-app.factory('Auth', function(FURL, $firebaseAuth, $firebase) {
+app.factory('Auth', function(FURL, $firebaseAuth, $firebaseArray, $firebaseObject) {
 	
 	var ref = new Firebase(FURL);
 	var auth = $firebaseAuth(ref);
@@ -11,12 +11,11 @@ app.factory('Auth', function(FURL, $firebaseAuth, $firebase) {
     createProfile: function(uid, user) {
       var profile = {
         name: user.name,
-        email: user.email,
-        gravatar: get_gravatar(user.email, 40)
+        email: user.email
       };
 
-      var profileRef = $firebase(ref.child('profile'));
-      return profileRef.$set(uid, profile);
+      var profileRef = ref.child('profile/' + uid);
+      return profileRef.set(profile);
     },
 
     login: function(user) {
@@ -41,9 +40,27 @@ app.factory('Auth', function(FURL, $firebaseAuth, $firebase) {
       auth.$unauth();
     },
 
-		changePassword: function(user) {      
-			return auth.$changePassword({email: user.email, oldPassword: user.oldPass, newPassword: user.newPass});
-		},
+	changePassword: function(user) {      
+		ref.changePassword({ email: user.email, 
+									oldPassword: user.oldPass, 
+									newPassword: user.newPass}, function(error) {
+									  if (error) {
+										switch (error.code) {
+										  case "INVALID_PASSWORD":
+											console.log("The specified user account password is incorrect.");
+											break;
+										  case "INVALID_USER":
+											console.log("The specified user account does not exist.");
+											break;
+										  default:
+											console.log("Error changing password:", error);
+										}
+									  } else {
+										console.log("User password changed successfully!");
+										
+									  }
+									});
+	},
 
     signedIn: function() {
       return !!Auth.user.provider; //using !! means (0, undefined, null, etc) = false | otherwise = true

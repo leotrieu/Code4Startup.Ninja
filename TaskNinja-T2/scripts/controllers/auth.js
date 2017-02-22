@@ -29,22 +29,15 @@ app.controller('AuthController', function($scope, $location, toaster, Auth) {
       });   
 	};
 
-	$scope.changePassword = function(user) {
-    
-    Auth.changePassword(user)
-      .then(function() {                        
-        
-        // Reset form
+	$scope.changePassword = function(user) {   
+		Auth.changePassword(user);
+		// Reset form
         $scope.user.email = '';
         $scope.user.oldPass = '';
-        $scope.user.newPass = '';
-
-        toaster.pop('success', "Password changed successfully");
-      }, function(err) {
-        toaster.pop('error', "Oops! Something went wrong.");
-        // errMessage(err);
-      });        
-  };
+        $scope.user.newPass = '';        
+		toaster.pop('success', "Password changed successfully");
+		$location.path('/');				          
+    };
 
 	// function errMessage(err) {
 

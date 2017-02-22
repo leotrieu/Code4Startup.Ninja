@@ -27,7 +27,7 @@
 				            </span>		            
 				        </div>
 				        <div class="payment">
-				        	<div>${{task.total}}</div>
+				        	<div>{{task.total | currency:"$":0}}</div>
 				        	<span class="label status {{task.status}}">{{task.status}}</span>		        	
 				        </div>
 				    </div>		    
